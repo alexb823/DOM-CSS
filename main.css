@@ -1,0 +1,27 @@
+.square {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+}
+
+.colorButton {
+  width: 100%;
+  height: 40px;
+  text-transform: capitalize;
+}
+
+.hideElem {
+  display: none;
+}
+
+#squares {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+#buttons {
+  border-top: 2px solid rgb(209, 209, 209);
+  padding-top: 10px;
+}
