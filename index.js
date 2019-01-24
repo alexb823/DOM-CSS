@@ -1,7 +1,7 @@
-const colors = ['blue', 'green', 'yellow', 'orange'];
+const colors = ['blue', 'green', 'yellow', 'orange', 'rgb(0,0,0)'];
 
-// Make all the default elements
 const body = document.querySelector('body');
+// Creat some default elements
 const squares = document.createElement('div');
 const buttons = document.createElement('div');
 const header = document.createElement('h1');
@@ -16,18 +16,20 @@ showAllBtn.textContent = 'Show All the Squares';
 hideAllBtn.classList.add('colorButton');
 showAllBtn.classList.add('colorButton');
 
-body.appendChild(header);
-body.appendChild(squares);
-body.appendChild(buttons);
-buttons.appendChild(hideAllBtn);
-buttons.appendChild(showAllBtn);
-
-hideAllBtn.addEventListener('click', () => {
-  squares.style.display = 'none';
-});
-showAllBtn.addEventListener('click', () => {
-  squares.style.display = 'flex';
-});
+// Add the default elements to the DOM and add event listeners to show and hide all buttons
+function addDefaultElements() {
+  body.appendChild(header);
+  body.appendChild(squares);
+  body.appendChild(buttons);
+  buttons.appendChild(hideAllBtn);
+  buttons.appendChild(showAllBtn);
+  hideAllBtn.addEventListener('click', () => {
+    squares.style.display = 'none';
+  });
+  showAllBtn.addEventListener('click', () => {
+    squares.style.display = 'flex';
+  });
+}
 
 // Generates the color squares
 function makeColorSquares(colors) {
@@ -54,6 +56,7 @@ function makeToggleButtons(colors) {
 }
 
 function generateDom(colors) {
+  addDefaultElements();
   makeColorSquares(colors);
   makeToggleButtons(colors);
 }
